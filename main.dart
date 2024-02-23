@@ -8,15 +8,14 @@ void main() {
   print("LOGIN FORM ");
   print("====================");
 
+// Thia is Login Fucntion:
   userLoginform();
   print("");
 
   var programContinue = true;
-
   while (programContinue) {
     programSteps();
     var userInput = stdin.readLineSync();
-
     if (userInput == "1") {
       addBook();
       print("");
@@ -28,9 +27,6 @@ void main() {
       print("");
     } else if (userInput == "4") {
       deleteBook();
-      print("");
-    } else if (userInput == "5") {
-      quantityBook();
       print("");
     } else {
       print("Now you are exit for the Program");
@@ -49,13 +45,7 @@ programSteps() {
   print("Press 5 for Quantity Book:");
 }
 
-viewBook() {
-  for (var x = 0; x < addnewBookDetails.length; x++) {
-    print("$x : ${addnewBookDetails[x]}");
-  }
-}
-
-// Add New Book Detail Function
+// Add New Book Details Function:
 addBook() {
   print("--Add Book Details--");
 
@@ -75,6 +65,13 @@ addBook() {
     "Price": addPrice,
   };
   addnewBookDetails.add(insertBookDetails);
+}
+
+// View Book Details Function:
+viewBook() {
+  for (var x = 0; x < addnewBookDetails.length; x++) {
+    print("$x : ${addnewBookDetails[x]}");
+  }
 }
 
 // Update Book Details Function:
@@ -132,8 +129,4 @@ deleteBook() {
   } else {
     print("Book with Serial No $deleteSerial not found.");
   }
-}
-
-quantityBook() {
-  print("Book Quantity");
 }
